@@ -1,36 +1,35 @@
-// Função para inicializar o mapa do Google Maps
-function initMap() {
-    const chile = { lat: -33.4489, lng: -70.6693 }; // Coordenadas de Santiago, Chile
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: chile,
-    });
-    // Você pode adicionar marcadores de pontos turísticos aqui se quiser
-    // new google.maps.Marker({
-    //   position: { lat: -33.4489, lng: -70.6693 },
-    //   map: map,
-    //   title: "Santiago"
-    // });
-}
+// Aguarda o DOM estar completamente carregado para executar o script
+document.addEventListener('DOMContentLoaded', function() {
 
-// Configuração da música e do controle de volume
-document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById("background-music");
-    const volumeSlider = document.getElementById("volume-slider");
+    // 1. Controle de Volume do Áudio
+    const music = document.getElementById('background-music');
+    const volumeSlider = document.getElementById('volume-slider');
 
-    // Tocar a música automaticamente
-    // OBS: Devido a restrições dos navegadores, a música só pode começar a tocar após uma interação do usuário
-    // Para testar, você pode adicionar um botão de 'play' no HTML.
+    // Sincroniza o volume do áudio com o valor inicial do slider
     music.volume = volumeSlider.value;
-    // Opcional: Adicione um listener para começar a tocar a música quando o usuário clicar em qualquer lugar
-    document.body.addEventListener('click', () => {
-        if (music.paused) {
-            music.play().catch(e => console.log("Erro ao tocar a música:", e));
-        }
-    }, { once: true }); // Apenas uma vez
 
-    // Sincronizar o volume
-    volumeSlider.addEventListener("input", () => {
-        music.volume = volumeSlider.value;
+    // Adiciona um "ouvinte de evento" ao slider
+    volumeSlider.addEventListener('input', function() {
+        // Atualiza o volume do áudio conforme o slider é movido
+        music.volume = this.value;
     });
+
+    // 2. Inicialização do Google Maps
+    window.initMap = function() {
+        // Posição de Santiago, Chile
+        const santiago = { lat: -33.4489, lng: -70.6693 };
+        
+        // Cria uma nova instância do mapa
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: santiago,
+        });
+
+        // Adiciona um marcador no mapa
+        new google.maps.Marker({
+            position: santiago,
+            map: map,
+            title: 'Santiago, Chile',
+        });
+    };
 });
