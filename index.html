@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Chile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API_AQUI&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <h1>Descubra o Chile</h1>
+        <p>História, cultura e paisagens incríveis!</p>
+    </header>
+
+    <div class="container">
+        <section class="music-section">
+            <h2>Música Chilena</h2>
+            <audio id="background-music" loop>
+                <source src="sua-musica.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <div class="controls">
+                <span>Volume: </span>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Mapa do Chile</h2>
+            <div id="map" class="map-container"></div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-panel">
+                <h2>História do Chile</h2>
+                <p>Aqui você pode escrever sobre a história do Chile, desde os povos indígenas até a era moderna. Fale sobre a Guerra do Pacífico, o regime de Pinochet e a transição para a democracia.</p>
+                </div>
+
+            <div class="content-panel">
+                <h2>Cultura Chilena</h2>
+                <h3>Música e Artistas</h3>
+                <p>O Chile tem uma cena musical rica, com artistas como Víctor Jara, Violeta Parra e Los Jaivas. A música folclórica e a Nova Canção Chilena são gêneros importantes.</p>
+                <h3>Culinária</h3>
+                <p>A culinária chilena é deliciosa! Destaques incluem a empanada de pino, o pastel de choclo e o curanto. Os vinhos chilenos também são mundialmente famosos.</p>
+                </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Site sobre o Chile</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
