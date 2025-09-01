@@ -1,111 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Descubra o Chile</title>
-  <style>
-    /* Banner */
-    header {
-      width: 100%;
-      height: 400px; /* ajuste aqui a altura do banner */
-      background: url("deserto-atacama-1536x864.jpg") no-repeat center center;
-      background-size: cover;
-    }
 
-    /* Layout geral */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
 
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css" />
 
-    .music-section, .map-section, .content-section {
-      margin-bottom: 40px;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 400px;
-    }
-
-    .content-panel {
-      margin-bottom: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #fff;
-    }
-  </style>
+  <!-- Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API_AQUI&callback=initMap" async defer></script>
 </head>
 <body>
-<header></header>
+  <header></header>
 
-<div class="container">
-  <section class="music-section">
-    <h2>Música Chilena</h2>
-    <audio id="background-music" loop controls>
-      <source src="sua-musica.mp3" type="audio/mpeg">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-    <div class="controls">
-      <span>Volume: </span>
-      <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
-    </div>
-  </section>
+  <div class="container">
+    <section class="music-section">
+      <h2>Música Chilena</h2>
+      <audio id="background-music" loop controls>
+        <source src="sua-musica.mp3" type="audio/mpeg" />
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+      <div class="controls">
+        <span>Volume: </span>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" />
+      </div>
+    </section>
 
-  <section class="map-section">
-    <h2>Mapa do Chile</h2>
-    <div id="map" class="map-container"></div>
-  </section>
+    <section class="map-section">
+      <h2>Mapa do Chile</h2>
+      <div id="map" class="map-container"></div>
+    </section>
 
-  <section class="content-section">
-    <div class="content-panel">
-      <h2>Resumen de la historia de Chile</h2>
-      <p>Chile fue habitado originalmente por pueblos indígenas como los mapuches. En el siglo XVI, los españoles llegaron y colonizaron el territorio, fundando Santiago en 1541.
-        El país inició su proceso de independencia en 1810 y la logró en 1818, con líderes como Bernardo O’Higgins. En el siglo XIX, Chile expandió su territorio tras la Guerra del Pacífico contra Perú y Bolivia.
-        En el siglo XX, el país vivió grandes cambios. En 1970, Salvador Allende fue elegido presidente, pero fue derrocado en un golpe militar en 1973, dando inicio a la dictadura de Augusto Pinochet hasta 1990.
-        Desde entonces, Chile es una democracia, con desarrollo económico, mas también con desafíos sociales. En 2019, hubo fuertes protestas sociales que impulsaron un proceso para cambiar la Constitución</p>
-    </div>
+    <section class="content-section">
+      <div class="content-panel">
+        <h2>Resumen de la historia de Chile</h2>
+        <p>
+          Chile fue habitado originalmente por pueblos indígenas como los mapuches. En el siglo XVI, los españoles llegaron y colonizaron el territorio, fundando Santiago en 1541.
+          El país inició su proceso de independencia en 1810 y la logró en 1818, con líderes como Bernardo O’Higgins. En el siglo XIX, Chile expandió su territorio tras la Guerra del Pacífico contra Perú y Bolivia.
+          En el siglo XX, el país vivió grandes cambios. En 1970, Salvador Allende fue elegido presidente, pero fue derrocado en un golpe militar en 1973, dando inicio a la dictadura de Augusto Pinochet hasta 1990.
+          Desde entonces, Chile es una democracia, con desarrollo económico, mas también con desafíos sociales. En 2019, hubo fuertes protestas sociales que impulsaron un proceso para cambiar la Constitución
+        </p>
+      </div>
 
-    <div class="content-panel">
-      <h2>Cultura Chilena</h2>
-      <h3>Música y Artistas</h3>
-      <p> <strong>Violeta Parra (1917–1967)</strong>
-        <br><strong>¿Quién fue?</strong>
-        <br>Violeta Parra fue una cantante, compositora, folclorista, artista plástica y poetisa chilena — una de las figuras más influyentes de la cultura latinoamericana. Es considerada la madre de la música popular chilena moderna.
-        <br><strong>¿Por qué es importante?</strong>
-        <br>Investigó y rescató canciones folclóricas tradicionales de Chile, viajando por todo el país para grabar melodías antiguas. También compuso canciones propias muy significativas, como:
-        <br>🎶 Gracias a la vida (una de las canciones latinoamericanas más conocidas en el mundo)
-        <br>🎶 Volver a los 17
-        <br><strong>Curiosidad:</strong>
-        <br>Además de la música, Violeta Parra también se destacó como artista visual — fue la primera latinoamericana en exponer individualmente en el Museo del Louvre, en París.</p>
-      <img src="https://live.staticflickr.com/5549/13728374053_813c01b1a7.jpg" alt="Violeta Parra, cantora e folclorista chilena, tocando guitarra" />
-      <p>Crédito: Ariel Quiroz / <a href="https://creativecommons.org/licenses/by/2.0/">CC‑BY‑2.0</a></p>
-      <h3>Cocinando</h3>
-      <p><strong>Resumen de la gastronomía chilena:</strong>
-        <br>La gastronomía chilena es muy variada y refleja la diversidad geográfica y cultural del país. Combina ingredientes del mar, de los valles, de la cordillera y del sur del país. Tiene influencias indígenas (especialmente mapuche), españolas y de otras culturas europeas.
-        <br>Se utilizan mucho productos como el pescado, los mariscos, el maíz, las papas, las carnes y las legumbres. Cada región tiene sus propias especialidades y sabores únicos.
-        <br>🍲 <strong>Plato típico: El pastel de choclo</strong>
-        <br>Es un plato tradicional chileno hecho con choclo molido (milho), que se hornea encima de un guiso de carne picada, pollo, aceitunas, huevos duros y pasas. Tiene un sabor dulce y salado a la vez, y se sirve caliente, especialmente en celebraciones y reuniones familiares.</p>
-      <img src="https://foreignfork.com/wp-content/uploads/pastel-de-choclo-14.jpg" alt="Porción de pastel de choclo chileno com a superfície dourada" />
-    </div>
-  </section>
-</div>
+      <div class="content-panel">
+        <h2>Cultura Chilena</h2>
+        <h3>Música y Artistas</h3>
+        <p>
+          <strong>Violeta Parra (1917–1967)</strong><br />
+          <strong>¿Quién fue?</strong><br />
+          Violeta Parra fue una cantante, compositora, folclorista, artista plástica y poetisa chilena — una de las figuras más influyentes de la cultura latinoamericana. Es considerada la madre de la música popular chilena moderna.<br />
+          <strong>¿Por qué es importante?</strong><br />
+          Investigó y rescató canciones folclóricas tradicionales de Chile, viajando por todo el país para grabar melodías antiguas. También compuso canciones propias muy significativas, como:<br />
+          🎶 Gracias a la vida (una de las canciones latinoamericanas más conocidas en el mundo)<br />
+          🎶 Volver a los 17<br />
+          <strong>Curiosidad:</strong><br />
+          Además de la música, Violeta Parra también se destacó como artista visual — fue la primera latinoamericana en exponer individualmente en el Museo del Louvre, en París.
+        </p>
+        <img src="https://live.staticflickr.com/5549/13728374053_813c01b1a7.jpg" alt="Violeta Parra, cantora e folclorista chilena, tocando guitarra" />
+        <p>Crédito: Ariel Quiroz / <a href="https://creativecommons.org/licenses/by/2.0/">CC‑BY‑2.0</a></p>
 
-<footer>
-  <p>&copy; 2025 - Site sobre o Chile</p>
-</footer>
+        <h3>Cocinando</h3>
+        <p>
+          <strong>Resumen de la gastronomía chilena:</strong><br />
+          La gastronomía chilena es muy variada y refleja la diversidad geográfica y cultural del país. Combina ingredientes del mar, de los valles, de la cordillera y del sur del país. Tiene influencias indígenas (especialmente mapuche), españolas y de otras culturas europeas.<br />
+          Se utilizan mucho productos como el pescado, los mariscos, el maíz, las papas, las carnes y las legumbres. Cada región tiene sus propias especialidades y sabores únicos.<br />
+          🍲 <strong>Plato típico: El pastel de choclo</strong><br />
+          Es un plato tradicional chileno hecho con choclo molido (milho), que se hornea encima de un guiso de carne picada, pollo, aceitunas, huevos duros y pasas. Tiene un sabor dulce y salado a la vez, y se sirve caliente, especialmente en celebraciones y reuniones familiares.
+        </p>
+        <img src="https://foreignfork.com/wp-content/uploads/pastel-de-choclo-14.jpg" alt="Porción de pastel de choclo chileno com a superfície dourada" />
+      </div>
+    </section>
+  </div>
 
-<script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 - Site sobre o Chile</p>
+  </footer>
+
+  <!-- JavaScript externo -->
+  <script src="script.js"></script>
 </body>
 </html>
+
