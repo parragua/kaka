@@ -123,6 +123,22 @@
         footer p {
             margin: 0;
         }
+        <script>
+  function initMap() {
+    const chile = { lat: -33.4489, lng: -70.6693 }; // Coordenadas de Santiago
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: chile,
+      zoom: 6,
+    });
+
+    const marker = new google.maps.Marker({
+      position: chile,
+      map: map,
+      title: "Santiago, Chile"
+    });
+  }
+</script>
+
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD...&callback=initMap" async defer></script>
 
@@ -199,5 +215,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
